@@ -7,24 +7,22 @@ import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 import { Section } from "../styles/GlobalComponents";
 import Head from "next/head";
+import { useRef } from "react";
 
 const Home = () => {
+  const techRef = useRef(null);
   return (
     <>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         <title>Amgeraldo Portfolio</title>
       </Head>
-      <Layout>
+      <Layout techRef={techRef}>
         <Section grid>
           <Hero />
           <BgAnimation />
         </Section>
         <Projects />
-        <Technologies />
+        <Technologies techRef={techRef} />
         <Timeline />
         <Acomplishments />
       </Layout>

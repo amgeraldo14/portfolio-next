@@ -13,7 +13,7 @@ import {
   Span,
 } from "./HeaderStyles";
 
-const Header = () => {
+const Header = ({ techRef }) => {
   return (
     <Container>
       <Div1>
@@ -36,7 +36,12 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href="#technologies">
+          <Link
+            href="#technologies"
+            onClick={(e) =>
+              techRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+          >
             <NavLink>Technologies</NavLink>
           </Link>
         </li>
